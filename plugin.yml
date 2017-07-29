@@ -1,0 +1,32 @@
+main: com.cryptic.repair.Main
+name: RP
+version: 1.0.0
+author: Cryptic
+description: Repair items with easy to use commands.
+commands:
+  rp:
+    usage: /<command> <args>
+    aliases: [rep, /repair]
+    description: Enter /rp for usage of commands.
+    
+  permissions:
+      rp:
+          description: Permission to list usage for /rp
+          default: true
+      rp.hand:
+          description: Permission to repair the item in your hand
+          default: op
+      rp.bar:
+          description: Permission to repair all the items in your hotbar
+          default: op
+      rp.all:
+          description: Permission to repair all the items in your inventory
+          default: op
+      rp.*:
+          description: Permission to access every other permission
+          children:
+              rp: true
+              rp.hand: true
+              rp.bar: true
+              rp.all: true
+          
